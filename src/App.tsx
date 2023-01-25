@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
 
 import Home from './pages/Home'
 import About from './pages/About'
@@ -10,6 +10,17 @@ function App() {
   return (
     <div className="App">
       <h1>Hello React Router</h1>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
+      </ul>
       <Routes>
         <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
