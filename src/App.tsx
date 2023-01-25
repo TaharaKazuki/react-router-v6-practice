@@ -1,10 +1,12 @@
 import React from 'react'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, NavLink } from 'react-router-dom'
 
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import NoMatch from './pages/NoMatch'
+
+import { CustomLink } from './hooks/customLink'
 
 function App() {
   return (
@@ -12,13 +14,15 @@ function App() {
       <h1>Hello React Router</h1>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <NavLink style={({ isActive }) => (isActive ? { color: 'blue' } : undefined)} to="/">
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <CustomLink to="/about">About</CustomLink>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <CustomLink to="/contact">Contact</CustomLink>
         </li>
       </ul>
       <Routes>
