@@ -16,7 +16,6 @@ const Posts = () => {
   return (
     <>
       <h2>Posts</h2>
-      <Outlet />
       <ul>
         {posts.map((post) => (
           <li key={post.id}>
@@ -26,6 +25,7 @@ const Posts = () => {
           </li>
         ))}
       </ul>
+      <Outlet />
     </>
   )
 }
